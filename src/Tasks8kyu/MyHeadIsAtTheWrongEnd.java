@@ -10,10 +10,7 @@ animal is the right way round (head, body, tail).
  */
 public class MyHeadIsAtTheWrongEnd {
     public static String[] fixTheMeerkat(String[] arr) {
-        String tail = arr[0];
-        arr[0] = arr[2];
-        arr[2] = tail;
-        return arr;
+        return new String[]{arr[2], arr[1], arr[0]};
     }
     public static void main(String[] args) {
     String[] arr = fixTheMeerkat(new String[] {"tail", "body", "head"});
