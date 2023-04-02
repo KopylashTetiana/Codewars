@@ -28,5 +28,11 @@ public class CatYearsDogYears {
         }
         return new int[] {humanYears, catYears, dogYears};
     }
-    
+
+    public static void main(String[] args) {
+    int[] humanCatDogYears = humanYearsCatYearsDogYears(10);
+    for (int years: humanCatDogYears) {
+        System.out.println(years);
+    }
+    }
 }
