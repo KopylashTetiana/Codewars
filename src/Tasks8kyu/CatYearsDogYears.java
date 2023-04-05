@@ -1,4 +1,5 @@
 package Tasks8kyu;
+
 /*
 I have a cat and a dog.
 I got them at the same time as kitten/puppy. That was humanYears years ago.
@@ -28,11 +29,21 @@ public class CatYearsDogYears {
         }
         return new int[] {humanYears, catYears, dogYears};
     }
+    public static String arrayToString(int[] array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                sb.append(", ");
+            }
+            sb.append(array[i]);
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 
     public static void main(String[] args) {
     int[] humanCatDogYears = humanYearsCatYearsDogYears(10);
-    for (int years: humanCatDogYears) {
-        System.out.println(years);
-    }
+        System.out.println(arrayToString(humanCatDogYears));
     }
 }

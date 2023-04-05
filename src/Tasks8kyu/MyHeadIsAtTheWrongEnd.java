@@ -12,11 +12,21 @@ public class MyHeadIsAtTheWrongEnd {
     public static String[] fixTheMeerkat(String[] arr) {
         return new String[]{arr[2], arr[1], arr[0]};
     }
-    public static void main(String[] args) {
-    String[] arr = fixTheMeerkat(new String[] {"tail", "body", "head"});
-    for(String bodyPart : arr) {
-        System.out.println(bodyPart);
+    public static String arrayToString(String [] array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                sb.append(", ");
+            }
+            sb.append(array[i]);
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
+    public static void main(String[] args) {
+    String[] arr = fixTheMeerkat(new String[] {"tail", "body", "head"});
+    System.out.println(arrayToString(arr));
     }
 }
