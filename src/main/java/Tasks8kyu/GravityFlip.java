@@ -24,47 +24,42 @@ Examples (input -> output:
 * 'L', [1, 4, 5, 3, 5 ]  ->  [5, 5, 4, 3, 1]
  */
 public class GravityFlip {
-    public static int[] sort(int[] arr) {
-        int[] sortedArr = arr.clone();
-            for (int i = 0, j = i; i < sortedArr.length - 1; j = ++i) {
-                int next = sortedArr[i + 1];
-                while (next < sortedArr[j]) {
-                    sortedArr[j + 1] = sortedArr[j];
-                    if (j-- == 0) {
-                        break;
-                    }
-                }
-                sortedArr[j + 1] = next;
+    public static void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+        /* Пересуваємо елементи масиву, які більше за ключ,
+        на одну позицію вправо */
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
             }
-        return sortedArr;
+            arr[j + 1] = key;
+        }
     }
     public static int[] flip(char dir, int[] arr) {
-        int[] flip;
-        if (dir == 'R') {
-            flip = sort(arr);
-        } else {
-            flip = arr.clone();
-            for (int i = (flip.length - 1), j = i; i >= 0; j = --i) {
-                int next = flip[i - 1];
-                while (next < flip[j]) {
-                    flip[j - 1] = flip[j];
-                    if (j++ == 0) {
-                        break;
-                    }
-                }
-                flip[j - 1] = next;
+        sort(arr);
+        if (dir == 'L') {
+            int rotation;
+            for (int i = 0; i < arr.length / 2; i++) {
+                rotation = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = rotation;
             }
         }
-            return flip;
-
+        return arr;
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[] {5, 6, -10, 8, 1, 2, 0};
-        int[] arr1Sort = flip('R', arr1);
-        for (int i : arr1Sort) {
+        int[] arr = new int[] {5, 6, -10, 8, 1, 2, 0};
+//        int[] flipRight = flip('R', arr);
+//        for (int i : flipRight) {
+//            System.out.println(i);
+//        }
+        int[] flipLeft = flip('L', arr);
+        for (int i : flipLeft) {
             System.out.println(i);
         }
-
     }
 }
