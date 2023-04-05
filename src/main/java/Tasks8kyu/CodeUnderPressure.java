@@ -1,4 +1,4 @@
-package Tasks8kyu;
+package main.java.Tasks8kyu;
 /*
 Code as fast as you can! You need to double the integer and return it.
  */

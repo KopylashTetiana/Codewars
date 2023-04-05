@@ -1,4 +1,4 @@
-package Tasks8kyu;
+package main.java.Tasks8kyu;
 
 /*
  Bob is bored during his physics lessons, so he's built himself a toy box to help

@@ -1,4 +1,4 @@
-package Tasks8kyu;
+package main.java.Tasks8kyu;
 
 /*
 I have a cat and a dog.
