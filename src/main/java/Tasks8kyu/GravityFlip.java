@@ -1,5 +1,5 @@
 package main.java.Tasks8kyu;
-
+import java.util.Arrays;
 /*
  Bob is bored during his physics lessons, so he's built himself a toy box to help
 pass the time. The box is special because it has the ability to change gravity.
@@ -40,6 +40,19 @@ public class GravityFlip {
     }
     public static int[] flip(char dir, int[] arr) {
         sort(arr);
+        if (dir == 'L') {
+            int rotation;
+            for (int i = 0; i < arr.length / 2; i++) {
+                rotation = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = rotation;
+            }
+        }
+        return arr;
+    }
+//The second option (flip2) is shorter and smarter than the first one (flip):
+    public static int[] flip2(char dir, int[] arr) {
+        Arrays.sort(arr);
         if (dir == 'L') {
             int rotation;
             for (int i = 0; i < arr.length / 2; i++) {
