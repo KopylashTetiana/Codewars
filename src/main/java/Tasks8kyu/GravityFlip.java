@@ -53,10 +53,10 @@ public class GravityFlip {
 
     public static void main(String[] args) {
         int[] arr = new int[] {5, 6, -10, 8, 1, 2, 0};
-//        int[] flipRight = flip('R', arr);
-//        for (int i : flipRight) {
-//            System.out.println(i);
-//        }
+        int[] flipRight = flip('R', arr);
+        for (int i : flipRight) {
+            System.out.println(i);
+        }
         int[] flipLeft = flip('L', arr);
         for (int i : flipLeft) {
             System.out.println(i);
