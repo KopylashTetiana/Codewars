@@ -9,13 +9,7 @@ Input -> Output
  */
 public class RemoveStringSpaces {
     public static String noSpace(final String x) {
-        String [] noSpaces = x.split(" ");
-        StringBuilder result = new StringBuilder();
-        for(String part : noSpaces) {
-            result.append(part);
-        }
-
-        return result.toString();
+        return x.replaceAll(" ", "");
     }
 
     public static void main(String[] args) {
