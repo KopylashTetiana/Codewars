@@ -7,10 +7,9 @@ package main.java.Tasks8kyu;
 */
 public class CountSheep {
     public static String countingSheep(int num) {
-        String repeat = " sheep...";
         StringBuilder result = new StringBuilder();
         for (int i = 1; i <= num; i++) {
-            result.append(i).append(repeat);
+            result.append(i).append(" sheep...");
         }
         return result.toString();
     }
