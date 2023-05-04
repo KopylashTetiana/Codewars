@@ -12,7 +12,7 @@ Example(Input => Output):
  */
 public class NumberToReversedArray {
     public static int[] digitize(long n) {
-        String number = Long.valueOf(n).toString();
+        String number = Long.toString(n);
         int[] digits = new int[number.length()];
         int index = number.length();
         for(char digit : number.toCharArray()) {
